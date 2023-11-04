@@ -1,7 +1,7 @@
 const express = require("express");
 const connectDB = require("./database");
 const { route } = require("./api/movie/movie.routes");
-const router = require("./api/movie/movie.routes");
+const moviesrouter = require("./api/movie/movie.routes");
 const app = express();
 // const { errorHandler } = require("./middleware/errorHandler");
 // const { notFound } = require("./middleware/notFound");
@@ -13,8 +13,8 @@ app.get("/", (req, res) => {
   res.send("hello application");
 });
 
-app.use("api/movies", router);
-app.use("api/actors", router);
+app.use("/api/movies", moviesrouter);
+// app.use("api/actors", router);
 // app.use(errorHandler);
 // app.use(notFound);
 
