@@ -14,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("api/movies", router);
+app.use("api/actors", router);
 // app.use(errorHandler);
 // app.use(notFound);
 
