@@ -1,5 +1,10 @@
 const express = require("express");
-const { CreateMovie, GetAllMovies } = require("./movie.controllers");
+const {
+  CreateMovie,
+  GetAllMovies,
+  DeleteMovie,
+  UpdateMMovie,
+} = require("./movie.controllers");
 const moviesrouter = express.Router();
 
 moviesrouter.post("/onebook", CreateMovie);

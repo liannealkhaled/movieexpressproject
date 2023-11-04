@@ -2,6 +2,7 @@ const express = require("express");
 const connectDB = require("./database");
 const { route } = require("./api/movie/movie.routes");
 const moviesrouter = require("./api/movie/movie.routes");
+const actorrouter = require("./api/actor /actor.routes");
 const app = express();
 // const { errorHandler } = require("./middleware/errorHandler");
 // const { notFound } = require("./middleware/notFound");
@@ -14,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/movies", moviesrouter);
-// app.use("api/actors", router);
+app.use("api/actors", actorrouter);
 // app.use(errorHandler);
 // app.use(notFound);
 

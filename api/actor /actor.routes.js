@@ -1,6 +1,8 @@
 const express = require("express");
-const { CreateActor } = require("./actor.controllers");
-const router = express.Router();
+const { CreateActor, GetAllActors } = require("./actor.controllers");
+const actorrouter = express.Router();
 
-router.post("/", CreateActor);
-router.get("/", GetAllActors);
+actorrouter.post("/", CreateActor);
+actorrouter.get("/", GetAllActors);
+
+module.exports = actorrouter;
