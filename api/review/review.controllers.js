@@ -3,7 +3,7 @@ const Review = require("../../model/Review");
 exports.CreateReview = async (req, res, next) => {
   try {
     const review = await Review.create(req.body);
-    return res.status(201).json(movie);
+    return res.status(201).json(review);
   } catch (error) {
     next(error);
   }
