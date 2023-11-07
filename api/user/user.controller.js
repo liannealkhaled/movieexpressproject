@@ -7,12 +7,10 @@ require("dotenv").config();
 
 //// generate token
 const generateToken = (user) => {
-  console.log(user);
   const payload = {
     username: user.username,
     _id: user._id,
   };
-
   return jwt.sign(payload, process.env.SECRETE_KEY, {
     expiresIn: process.env.JWT_TOKEN_EXP,
   });
@@ -22,13 +20,10 @@ const generateToken = (user) => {
 exports.createUser = async (req, res, next) => {
   try {
     //// hashed passward :
-
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-
     req.body.password = hashedPassword;
 
     const user = await User.create(req.body);
-    console.log(user);
     const token = generateToken(user);
     res.status(201).json({ token });
   } catch (error) {

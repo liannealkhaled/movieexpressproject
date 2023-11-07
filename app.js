@@ -27,7 +27,7 @@ app.use(errorHandler);
 app.use(notFound);
 
 app.use(passport.initialize());
-passport.use(localStrategy);
+// passport.use(localStrategy);
 
 connectDB();
 
